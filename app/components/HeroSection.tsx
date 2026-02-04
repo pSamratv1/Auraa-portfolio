@@ -52,26 +52,30 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/60" />
       </motion.div>
 
-      {/* Sound Toggle Indicator (Stays visible so user can mute again) */}
-      <div className="absolute bottom-10 right-10 z-20 flex items-center gap-3">
-        <div className="flex gap-[2px] items-end h-3 w-4">
-          {[0.4, 0.7, 0.3, 0.9].map((h, i) => (
-            <motion.div
-              key={i}
-              animate={{ height: isMuted ? "2px" : `${h * 100}%` }}
-              transition={{
-                repeat: Infinity,
-                duration: 0.5,
-                repeatType: "reverse",
-                delay: i * 0.1,
-              }}
-              className="w-[2px] bg-white"
-            />
-          ))}
-        </div>
+      <div className="absolute bottom-10 right-10 z-20 w-32 flex flex-col justify-start items-start gap-3">
         <span className="font-sans text-[9px] uppercase tracking-[0.2em] text-white/70">
-          {isMuted ? "Sound Off" : "Sound On"}
+          {isMuted ? "Click to unmute" : "Click to mute"}
         </span>
+        <div className="flex items-center gap-4 justify-start">
+          <div className="flex gap-[2px] items-end h-3 w-4">
+            {[0.4, 0.7, 0.3, 0.9].map((h, i) => (
+              <motion.div
+                key={i}
+                animate={{ height: isMuted ? "2px" : `${h * 100}%` }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 0.5,
+                  repeatType: "reverse",
+                  delay: i * 0.1,
+                }}
+                className="w-[2px] bg-white"
+              />
+            ))}
+          </div>
+          <span className="font-sans text-[9px] uppercase tracking-[0.2em] text-white/70">
+            {isMuted ? "Sound Off" : "Sound On"}
+          </span>
+        </div>
       </div>
 
       {/* Content Overlay - Only shows when Muted */}
