@@ -10,8 +10,8 @@ const config = {
         sans: ["var(--font-raleway)", "sans-serif"],
       },
       colors: {
-        background: "#050505", // Deep Cinematic Black
-        accent: "#C5A059", // Elegant Gold
+        background: "var(--background)", // Deep Cinematic Black
+        foreground: "var(--foreground)",
       },
     },
   },

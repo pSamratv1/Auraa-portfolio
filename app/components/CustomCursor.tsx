@@ -41,6 +41,13 @@ export default function CustomCursor() {
       backgroundColor: "rgba(255,255,255,0)", // Transparent fill
       border: "1px solid rgba(255,255,255,0.3)", // The border from your image
     },
+    play: {
+      height: 90,
+      width: 90,
+      backgroundColor: "#C5A059", // Auraa Gold
+      mixBlendMode: "normal",
+      border: "0px solid transparent",
+    },
   };
 
   return (
@@ -65,6 +72,18 @@ export default function CustomCursor() {
           Our
           <br />
           Showreel
+        </motion.div>
+      )}
+      {cursorVariant === "play" && (
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          className="flex flex-col items-center justify-center"
+        >
+          <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-black border-b-[6px] border-b-transparent ml-1 mb-1" />
+          <span className="text-[8px] font-bold text-black tracking-widest ml-1">
+            PLAY
+          </span>
         </motion.div>
       )}
     </motion.div>
